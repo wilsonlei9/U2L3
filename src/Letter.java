@@ -3,23 +3,25 @@ public class Letter
     /** Prints out a complete letter by printing the greeting,
      Followed by the special message, followed by the closing */
 
-    public Letter(String fromName)
-    {
-        public void closing()
-    }
+    private String fromName;
+    private String toName;
 
     public void writeLetter(String toName)
     {
+        this.toName = toName;
         greeting();
-        System.out.println(toName);
         specialMessage();
-
+        closing();
     }
 
-
-    public String greeting()
+    public Letter(String fromName)
     {
-        System.out.print("Hello, friend" );
+        this.fromName = fromName;
+    }
+
+    public void greeting()
+    {
+        System.out.println("Hello, " + toName);
     }
 
     public void specialMessage()
@@ -27,9 +29,10 @@ public class Letter
         System.out.println("Java is pretty cool, wouldn’t you say?");
     }
 
-    public String closing()
+    public void closing()
     {
-        System.out.println("From" , fromName);
+        System.out.println("From, " + fromName);
     }
 }
+
 
